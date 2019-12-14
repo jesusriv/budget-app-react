@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {
-    FormLabel,
     FormControl,
     TextField,
     Paper,
-    Button
+    Button,
+    Typography
 
 } from '@material-ui/core';
 
@@ -22,10 +22,16 @@ const Form: React.FC<FormProps> =  (props: FormProps) => {
     const { name, email, password, confirmPassword, handleSubmit } = props;
     return (
         <Paper style={styles.paper} square={true}>
+            <Typography 
+                variant="h4"
+                align="center" 
+                style={{
+                    textTransform: "uppercase",
+                    fontWeight: 100
+                }}>Register</Typography>
             <form onSubmit={handleSubmit} style={{
                 display: "flex", 
                 flexDirection: "column", alignItems: "center"}}>
-                <FormLabel>Register</FormLabel>
                 <FormControl style={styles.control}>
                     <TextField 
                         value={name}

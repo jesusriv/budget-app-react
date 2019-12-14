@@ -40,14 +40,6 @@ export default class Login extends React.Component<{}, LoginState> {
                     handleSubmit={this.handleSubmit}
                     handleChange={this.handleChange}
                 />
-                <Paper style={styles.paper} square={true}>
-                    <Typography 
-                        variant="h5" 
-                        style={{color: "white",}} 
-                        align="center"
-                        >Don't have an account? <br /> 
-                        <Link style={styles.link} to="/register">Register here.</Link></Typography>
-                </Paper>
             </div>
         )
     }
@@ -55,7 +47,7 @@ export default class Login extends React.Component<{}, LoginState> {
 
 const styles = {
     root: {
-        backgroundColor: `${customTheme.palette.primary.light}`,
+        backgroundColor: `${customTheme.palette.primary.main}`,
         height: '100vh',
         display: 'flex',
         justifyContent: "center",
