@@ -16,13 +16,12 @@ interface BodyProps {
         available: number, 
         activity: number, 
     }[]
-    mainCategories: String[]
 }
 
 const CategoryBody: React.FC<BodyProps> = (props: BodyProps) => {
 
     const { category, subCategories } = props;
-    
+
     const subs = subCategories.map(sub => {
         return  <TableRow key={sub.name.toString()}>
                     <TableCell>{sub.name}</TableCell>

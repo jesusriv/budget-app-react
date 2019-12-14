@@ -16,10 +16,16 @@ const Dashboard: React.FC = () => {
     // }
     return (
         <div style={{display: "flex"}}>
-            <Paper style={styles.paper} square={true}>
+            <div style={{
+                    width: "20vw", 
+                    height: "100vh", 
+                    backgroundColor: `${customTheme.palette.primary.main}`,
+                    position: 'fixed'
+                }}
+            >
 
-            </Paper>
-            <Paper style={{width: "80vw", margin: "0 auto"}}>
+            </div>
+            <Paper style={{width: "80vw", margin: "0 20vw"}}>
                 <Paper style={{width: "80vw", height: "20vh"}} square={true} elevation={1}>
 
                 </Paper>
@@ -33,10 +39,3 @@ const Dashboard: React.FC = () => {
 }
 
 export default Dashboard;
-
-const styles = {
-    paper: {
-        width: "20vw", 
-        height: "100vh", 
-        backgroundColor: `${customTheme.palette.primary.main}`}
-}

@@ -26,7 +26,6 @@ export default class SubCells extends React.Component<SubProps, SubState> {
         }
     }
     public clicked = () => {
-        console.log('clicked')
         this.setState(prevState => ({
             clicked: !prevState.clicked
         }));
@@ -61,7 +60,9 @@ export default class SubCells extends React.Component<SubProps, SubState> {
                                     width: "100%", 
                                     letterSpacing: ".05rem",
                                     border: "1px solid #afafaf", 
-                                    borderRadius: ".3rem"}} 
+                                    borderRadius: ".3rem",
+                                    padding: "0 .5rem"
+                                }}
                                     onChange={(
                                         e: React.ChangeEvent<HTMLInputElement>,
                                     ): void => this.handleChange(e)}

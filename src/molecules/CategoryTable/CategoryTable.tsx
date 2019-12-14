@@ -65,7 +65,7 @@ export default class CategoryTable extends React.Component<TableProps, TableStat
                 }
                 return (+sub.category - 1) === categories.indexOf(category);
             });
-            return componentList.push(<CategoryBody key={category.toString()} subCategories={subsToSend} category={category} mainCategories={this.state.mainCategories}/>)
+            return componentList.push(<CategoryBody key={category.toString()} subCategories={subsToSend} category={category} />)
         })
         
         this.setState({components: [...componentList]});
