@@ -86,6 +86,6 @@ const styles = {
         width: "100%",
         height: "2.7rem",
         marginTop: "1rem",
-        backgroundColor: `${customTheme.palette.primary.light}`
+        backgroundColor: `${customTheme.palette.primary.main}`
     },
 }

@@ -2,13 +2,6 @@ import React from 'react';
 
 import customTheme from '../../theme/CustomTheme/CustomTheme';
 import Form from '../../components/Form/RegisterForm';
-import {
-    Typography,
-    Paper
-} from '@material-ui/core';
-import {
-    Link
-} from 'react-router-dom';
 
 type RegisterState = {
     name: String,
