@@ -2,13 +2,6 @@ import React from 'react';
 
 import customTheme from '../../theme/CustomTheme/CustomTheme';
 import Form from '../../components/Form/RegisterForm';
-import {
-    Typography,
-    Paper
-} from '@material-ui/core';
-import {
-    Link
-} from 'react-router-dom';
 
 type RegisterState = {
     name: String,
@@ -49,14 +42,6 @@ export default class Register extends React.Component<{}, RegisterState> {
                     handleSubmit={this.handleSubmit}
                     handleChange={this.handleChange}
                 />
-                <Paper style={styles.paper} square={true}>
-                    <Typography 
-                        variant="h5" 
-                        style={{color: "white",}} 
-                        align="center"
-                        >Have an account already? <br /> 
-                        <Link style={styles.link} to="/login">Login here.</Link></Typography>
-                </Paper>
             </div>
         )
     }
@@ -64,11 +49,11 @@ export default class Register extends React.Component<{}, RegisterState> {
 
 const styles = {
     root: {
-        backgroundColor: `${customTheme.palette.primary.light}`,
         height: '100vh',
         display: 'flex',
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: `${customTheme.palette.primary.main}`
     },
     paper: {
         display: "flex",

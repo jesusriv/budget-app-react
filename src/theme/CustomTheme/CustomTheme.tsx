@@ -15,23 +15,22 @@ const customTheme = createMuiTheme({
                 "&:before": {
                     borderBottom: `1px solid ${primary}`
                 },
-                "&:hover": {
-                    borderBottom: `red`
-                }
-            },
-            focused: {
-
             }
         },
         MuiOutlinedInput: {
             inputMarginDense: {
                 paddingTop: ".2rem",
                 paddingBottom: ".2rem",
-            }
+            },
         },
         MuiTableCell: {
             root: {
                 padding: ".75rem"
+            }
+        },
+        MuiPaper: {
+            root: {
+                color: "rgba(0, 0, 0, .57)"
             }
         }
     }
