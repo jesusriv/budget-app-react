@@ -17,6 +17,7 @@ interface TableProps {
 interface TableState {
     mainCategories: String[],
     subCategories: {
+        id: number,
         name: String, 
         budgeted: number, 
         available: number, 
@@ -25,8 +26,7 @@ interface TableState {
             id: number
         }
     }[],
-    components: JSX.Element[],
-    budget: Object
+    components: JSX.Element[]
 }
 
 export default class CategoryTable extends React.Component<TableProps, TableState> {
@@ -36,43 +36,29 @@ export default class CategoryTable extends React.Component<TableProps, TableStat
         this.state = {
             mainCategories: ['Immediate Obligations', 'True Expenses', 'Debt Payment', 'Credit Card Payments', 'Quality of Life Goals', 'Just For Fun'],
             subCategories: [],
-            budget: {},
             components: []
         }
     }
 
     async componentDidMount() {
-        console.log("dddd");
-        const response = await fetch(`/api/budget/${this.props.budget}`,{
-            method: "GET"
-        });
-        const budget = await response.json();
-        this.state.budget = budget;
-        
-        this.setState({subCategories: budget.subCategories})
-        this.makeComponentList();
+        this.setComponentsList();
     }
 
-    public makeComponentList = () => {
+    public setComponentsList = () => {
         let categories = [...this.state.mainCategories];
-        let subCategories = [...this.state.subCategories];
         let componentList: JSX.Element[] = [];
 
         categories.map((category: String) => {
-            let subsToSend = subCategories.filter(sub => {
-                if (sub.category.id) {
-                    return (sub.category.id - 1) === categories.indexOf(category)
-                }
-                return (+sub.category - 1) === categories.indexOf(category);
-            });
-            return componentList.push(<CategoryBody key={category.toString()} subCategories={subsToSend} category={category} />)
+            let cat = {
+                name: category,
+                id: categories.indexOf(category)
+            }
+            return componentList.push(<CategoryBody key={categories.indexOf(category)} budget={this.props.budget} category={cat} />)
         })
         
-        this.setState({components: [...componentList]});
+        this.setState({components: [...componentList]});  
     }
-
     render() {
-        
         return (
             <Table>
                 <TableHead>
