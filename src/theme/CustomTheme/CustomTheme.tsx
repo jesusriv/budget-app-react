@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 
 const primary = "#609db3";
-const lightprimary = "#91d3eb";
+const lightprimary = "#def8ff";
 const secondary = "#b07663";
 const dark = "#4a7b85";
 
@@ -24,14 +24,19 @@ const customTheme = createMuiTheme({
                 paddingBottom: ".2rem",
             },
         },
+        MuiPaper: {
+            root: {
+                color: "rgba(0, 0, 0, .57)"
+            }
+        },
         MuiTableCell: {
             root: {
                 padding: ".75rem"
             }
         },
-        MuiPaper: {
+        MuiTable: {
             root: {
-                color: "rgba(0, 0, 0, .57)"
+                overflowY: 'auto'
             }
         }
     }

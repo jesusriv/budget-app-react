@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CategoryBody from '../CategoryBody/CategoryBody';
+import CategoryBody from '../../molecules/CategoryBody/CategoryBody';
 
 import {
     Table,
@@ -60,17 +60,19 @@ export default class CategoryTable extends React.Component<TableProps, TableStat
     }
     render() {
         return (
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell style={{width: "60%"}}>Category</TableCell>
-                        <TableCell>Budgeted</TableCell>
-                        <TableCell>Activity</TableCell>
-                        <TableCell>Available</TableCell>
-                    </TableRow>
-                </TableHead>
-                { this.state.components }
-            </Table>
+            <div style={{width: '700px', height: "auto"}}>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell style={{width: "60%"}}>Category</TableCell>
+                            <TableCell>Budgeted</TableCell>
+                            <TableCell>Activity</TableCell>
+                            <TableCell>Available</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    { this.state.components }
+                </Table>
+            </div>
         );
     }
 }
