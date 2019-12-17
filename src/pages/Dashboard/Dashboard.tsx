@@ -1,7 +1,9 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
+
 import CategoryTable from '../../organisms/CategoryTable/CategoryTable';
 import Aside from '../../organisms/Aside/Aside';
+import StatusBar from '../../organisms/StatusBar/StatusBar';
+import Overview from '../../organisms/Overview/Overview';
 
 const Dashboard: React.FC = () => {
     // if (!localStorage.getItem('userId')) {
@@ -13,15 +15,16 @@ const Dashboard: React.FC = () => {
     return (
         <div style={{display: "flex"}}>
             <Aside />
-            <Paper style={{width: "80vw", margin: "0 20vw"}}>
-                <Paper style={{width: "80vw", height: "20vh"}} square={true} elevation={1}>
-
-                </Paper>
-                <CategoryTable 
-                    user={userId}
-                    budget={budgetId}
-                />
-            </Paper>
+            <div id="main-content" style={{width: "1030px", margin: "0 250px"}}>
+                <StatusBar />
+                <div style={{display: 'flex', top: '95px', position: 'relative'}}>
+                    <CategoryTable 
+                        user={userId}
+                        budget={budgetId}
+                    />
+                    <Overview budget={budgetId}/>
+                </div>
+            </div>
         </div>
     )
 }

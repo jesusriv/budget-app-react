@@ -14,7 +14,7 @@ export default Aside;
 
 const styles = {
     container: {
-        width: "20vw", 
+        width: "250px", 
         height: "100vh", 
         backgroundColor: `${customTheme.palette.primary.main}`
     }
