@@ -20,7 +20,6 @@ export default class Login extends React.Component<{}, LoginState> {
 
     public handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('clicked');
     }
     
     public handleChange = (name: keyof LoginState, event: React.FormEvent<HTMLInputElement>) => {
