@@ -1,11 +1,7 @@
 import React from 'react';
-
-import customTheme from '../../theme/CustomTheme/CustomTheme';
-import {
-    Paper,
-} from '@material-ui/core';
-import CategoryTable from '../../molecules/CategoryTable/CategoryTable';
-
+import { Paper } from '@material-ui/core';
+import CategoryTable from '../../organisms/CategoryTable/CategoryTable';
+import Aside from '../../organisms/Aside/Aside';
 
 const Dashboard: React.FC = () => {
     // if (!localStorage.getItem('userId')) {
@@ -16,15 +12,7 @@ const Dashboard: React.FC = () => {
     // }
     return (
         <div style={{display: "flex"}}>
-            <div style={{
-                    width: "20vw", 
-                    height: "100vh", 
-                    backgroundColor: `${customTheme.palette.primary.main}`,
-                    position: 'fixed'
-                }}
-            >
-
-            </div>
+            <Aside />
             <Paper style={{width: "80vw", margin: "0 20vw"}}>
                 <Paper style={{width: "80vw", height: "20vh"}} square={true} elevation={1}>
 

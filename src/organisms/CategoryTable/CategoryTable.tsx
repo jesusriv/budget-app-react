@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CategoryBody from '../CategoryBody/CategoryBody';
+import CategoryBody from '../../molecules/CategoryBody/CategoryBody';
 
 import {
     Table,
