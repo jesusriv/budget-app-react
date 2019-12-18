@@ -71,7 +71,7 @@ export default class SubCells extends React.Component<SubProps, SubState> {
         const { type } = this.props;
         if (clicked) {
             return (
-                <TableCell style={{width: "10rem"}}>
+                <TableCell>
                     <form onSubmit={this.handleSubmit}>
                         <FormControl>
                             <input 

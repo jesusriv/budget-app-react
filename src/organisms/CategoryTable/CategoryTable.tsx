@@ -60,11 +60,19 @@ export default class CategoryTable extends React.Component<TableProps, TableStat
     }
     render() {
         return (
-            <div style={{width: '700px', height: "auto"}}>
+            <div style={{
+                width: '700px', 
+                height: "auto"
+            }}>
                 <Table>
-                    <TableHead>
+                    <TableHead style={{
+                        position: 'fixed', 
+                        width: '700px',
+                        backgroundColor: 'white',
+                        zIndex: 10
+                    }}>
                         <TableRow>
-                            <TableCell style={{width: "60%"}}>Category</TableCell>
+                            <TableCell id="head-row-name">Category</TableCell>
                             <TableCell>Budgeted</TableCell>
                             <TableCell>Activity</TableCell>
                             <TableCell>Available</TableCell>

@@ -3,14 +3,14 @@ import React from 'react';
 import CategoryTable from '../../organisms/CategoryTable/CategoryTable';
 import Aside from '../../organisms/Aside/Aside';
 import StatusBar from '../../organisms/StatusBar/StatusBar';
-import Overview from '../../organisms/Overview/Overview';
+import Overview from '../../molecules/Overview/Overview';
 
 const Dashboard: React.FC = () => {
     // if (!localStorage.getItem('userId')) {
     //     return <Redirect to="/login" />
     // } else {
-        let userId = 5;
-        let budgetId = 5;
+        let userId = 3;
+        let budgetId = 3;
     // }
     return (
         <div style={{display: "flex"}}>

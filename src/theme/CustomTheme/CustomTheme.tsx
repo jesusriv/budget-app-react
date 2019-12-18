@@ -31,7 +31,8 @@ const customTheme = createMuiTheme({
         },
         MuiTableCell: {
             root: {
-                padding: ".75rem"
+                padding: ".75rem",
+                width: "128px"
             }
         },
         MuiTable: {

@@ -13,6 +13,14 @@ body {
 
 #overview {position: fixed; margin-left: 700px;}
 
+#row-body-name {
+  width: 420px;
+}
+
+#head-row-name {
+  width: 321.4px;
+}
+
 #status-bar {
   position: fixed;
   top: 0;
