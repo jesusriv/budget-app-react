@@ -7,8 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {font-size: 6px;}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

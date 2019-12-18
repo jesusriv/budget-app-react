@@ -6,7 +6,7 @@ import {
     TableCell
 } from '@material-ui/core';
 
-import SubCells from '../../molecules/SubCells/SubCells';
+import SubCells from '../../atoms/SubCells/SubCells';
 import customTheme from '../../theme/CustomTheme/CustomTheme';
 
 interface BodyProps {
@@ -86,9 +86,9 @@ export default class CategoryBody extends React.Component<BodyProps, BodyState> 
         
     const { category } = this.props;
     return (
-        <TableBody>
+        <TableBody style={{position: 'relative', top: '45px'}}>
             <TableRow style={{backgroundColor: `${customTheme.palette.primary.light}`}}>
-                <TableCell style={{color: "black", fontWeight: "bold"}}>{category.name}</TableCell>
+                <TableCell id="row-body-name" style={{color: "black", fontWeight: "bold"}}>{category.name}</TableCell>
                 <SubCells 
                     type="Budgeted"
                     amount={this.state.budgeted}
