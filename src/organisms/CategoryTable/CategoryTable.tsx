@@ -48,12 +48,14 @@ export default class CategoryTable extends React.Component<TableProps, TableStat
         let categories = [...this.state.mainCategories];
         let componentList: JSX.Element[] = [];
 
-        categories.map((category: String) => {
+        categories.map((category: String, index: number) => {
             let cat = {
                 name: category,
-                id: categories.indexOf(category)
+                id: index
             }
-            return componentList.push(<CategoryBody key={categories.indexOf(category)} budget={this.props.budget} category={cat} />)
+            return componentList.push(
+                <CategoryBody 
+                    key={index} budget={this.props.budget} category={cat} />)
         })
         
         this.setState({components: [...componentList]});  

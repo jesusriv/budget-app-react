@@ -71,7 +71,7 @@ export default class Overview extends React.Component<OverviewProps, OverviewSta
         return (
             <div style={styles.container} id="overview">
                 {
-                    types.map((e: String) => {
+                    types.map((e: string) => {
                         let data: String = '';
                         switch (e) {
                             case 'BUDGETED':
@@ -85,6 +85,7 @@ export default class Overview extends React.Component<OverviewProps, OverviewSta
                                 break;
                         }
                         return <OverviewTypes 
+                                    key={types.indexOf(e)}
                                     title={e}
                                     amount={data} />
                     })
