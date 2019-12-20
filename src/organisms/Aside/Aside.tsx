@@ -2,6 +2,10 @@ import React from 'react';
 
 import customTheme from '../../theme/CustomTheme/CustomTheme';
 import AsideButton from '../../molecules/AsideButtons/AsideButtons';
+import Chip from '@material-ui/core/Chip';
+import {
+    AddCircle
+} from '@material-ui/icons';
 
 interface AsideProps {
     budgetId: number
@@ -50,6 +54,7 @@ export default class Aside extends React.Component<AsideProps, AsideState> {
 
     render() {
         const { budget } = this.state;
+        let amount = budget.user.bankAccounts.map(acc => acc.balance).reduce((acc: number, val: number) => acc + val, 0)
         return (
             <div id="aside" style={styles.container}>
                 <div id="top" style={{padding: '12px'}}>
@@ -66,6 +71,30 @@ export default class Aside extends React.Component<AsideProps, AsideState> {
                         }}>{budget.user.email}</p>
                 </div>
                 <AsideButton />
+                <div style={{padding: '12px'}}>
+                    <div style={{fontSize: '14px', fontWeight: 'bold', display: 'flex', justifyContent: 'space-between'}}>
+                        <p>Budget</p>
+                        <p>${Intl.NumberFormat('en-us', {minimumFractionDigits: 2}).format(amount)}</p>
+                    </div>
+                    {
+                        budget.user.bankAccounts.map(account => {
+                            return(
+                                <div style={{fontSize: '14px', display: 'flex', justifyContent: 'space-between'}}>
+                                    <p>{account.bankName}</p>
+                                    <p>${Intl.NumberFormat('en-us', {minimumFractionDigits: 2}).format(account.balance)}</p>
+                                </div>
+                            )
+                        })
+                    }
+                    <Chip 
+                        id="add-account"
+                        style={{backgroundColor: "rgba(222, 248, 255, .3)", color: 'white'}}
+                        icon={
+                            <AddCircle style={{color: "white", marginBottom: '2px', marginRight: '-5px'}}/>
+                        }
+                        label="Add account"
+                       />
+                </div>
             </div>
         );
     }

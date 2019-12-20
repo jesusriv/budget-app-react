@@ -39,7 +39,7 @@ const customTheme = createMuiTheme({
             root: {
                 overflowY: 'auto'
             }
-        },
+        }
     }
 })
 export default customTheme;
