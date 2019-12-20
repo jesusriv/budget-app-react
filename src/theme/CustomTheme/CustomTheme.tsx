@@ -3,7 +3,7 @@ import { createMuiTheme } from '@material-ui/core';
 const primary = "#609db3";
 const lightprimary = "#def8ff";
 const secondary = "#b07663";
-const dark = "#4a7b85";
+const dark = "#38505e";
 
 const customTheme = createMuiTheme({
     palette: {
@@ -39,7 +39,7 @@ const customTheme = createMuiTheme({
             root: {
                 overflowY: 'auto'
             }
-        }
+        },
     }
 })
 export default customTheme;

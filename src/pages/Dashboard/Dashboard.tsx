@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
     // }
     return (
         <div style={{display: "flex"}}>
-            <Aside />
+            <Aside budgetId={budgetId}/>
             <div id="main-content" style={{width: "1030px", margin: "0 250px"}}>
                 <StatusBar />
                 <div style={{display: 'flex', top: '95px', position: 'relative'}}>
