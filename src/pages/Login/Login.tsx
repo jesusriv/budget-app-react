@@ -3,23 +3,52 @@ import React from 'react';
 import customTheme from '../../theme/CustomTheme/CustomTheme';
 import Form from '../../components/Form/LoginForm';
 
-type LoginState = {
-    email: String,
-    password: String,
+// import {Redirect} from 'react-router-dom'
+import { History } from 'history';
+
+interface Props {
+    history: History
 }
 
-export default class Login extends React.Component<{}, LoginState> {
+type LoginState = {
+    email: String,
+    password: String
+}
+
+export default class Login extends React.Component<Props, LoginState> {
     state: LoginState;
-    constructor(props: {}) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             email: "",
             password: ""
         }
+        this.isLoggedIn();
     }
 
-    public handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    public isLoggedIn = () => {
+        if (localStorage.getItem('userId')) return this.props.history.push('/dashboard');
+    }
+
+    public handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const { email, password } = this.state;
+        const response = await fetch(`/api/login`, {
+            method: "POST",
+            mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email, password})
+        });
+        const user = await response.json();
+        if (user) {
+            localStorage.setItem('userId', user.id);
+            console.log(localStorage.getItem('userId'));
+            return this.props.history.push('/dashboard');
+        }
+        return null;
     }
     
     public handleChange = (name: keyof LoginState, event: React.FormEvent<HTMLInputElement>) => {

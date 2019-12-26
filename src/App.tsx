@@ -8,24 +8,28 @@ import customTheme from './theme/CustomTheme/CustomTheme';
 
 import './App.css';
 
+import createHistory from "history/createBrowserHistory";
+
+
 import {
-  BrowserRouter as Router,
+  Router,
   Route,
   Switch
 } from 'react-router-dom';
-  
+
+const history = createHistory();
 const App: React.FC = () => {
   return (
     <MuiThemeProvider theme={customTheme}>
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route path="/register">
             <Register />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login history={history} />
           </Route>
-          <Route path="/">
+          <Route path="/dashboard">
             <Dashboard />
           </Route>
         </Switch>

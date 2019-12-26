@@ -1,17 +1,18 @@
 import React from 'react';
 
+import { Redirect } from 'react-router-dom';
+
 import CategoryTable from '../../organisms/CategoryTable/CategoryTable';
 import Aside from '../../organisms/Aside/Aside';
 import StatusBar from '../../organisms/StatusBar/StatusBar';
 import Overview from '../../molecules/Overview/Overview';
 
 const Dashboard: React.FC = () => {
-    // if (!localStorage.getItem('userId')) {
-    //     return <Redirect to="/login" />
-    // } else {
-        let userId = 3;
-        let budgetId = 3;
-    // }
+    if (!localStorage.getItem('userId')) {
+        return <Redirect to="/login" />
+    }
+    let userId = 3;
+    let budgetId = 3;
     return (
         <div style={{display: "flex"}}>
             <Aside budgetId={budgetId}/>
