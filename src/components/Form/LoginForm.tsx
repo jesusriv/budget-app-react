@@ -39,7 +39,7 @@ const Form: React.FC<FormProps> =  (props) => {
                         onChange={(e) => props.handleChange("email", e)}
                         placeholder="Email"
                         required={true}
-                        type="string"
+                        type="email"
                         variant="outlined"
                         fullWidth={true}
                         size="medium"
@@ -53,7 +53,7 @@ const Form: React.FC<FormProps> =  (props) => {
                         onChange={e => props.handleChange('password', e)}
                         placeholder="Password"
                         required={true}
-                        type="string"
+                        type="password"
                         variant="outlined"
                         fullWidth={true}
                         size="medium"
