@@ -6,6 +6,7 @@ import Chip from '@material-ui/core/Chip';
 import {
     AddCircle
 } from '@material-ui/icons';
+import Account from '../../atoms/Account/Account';
 
 interface AsideProps {
     budgetId: number
@@ -77,13 +78,8 @@ export default class Aside extends React.Component<AsideProps, AsideState> {
                         <p>${Intl.NumberFormat('en-us', {minimumFractionDigits: 2}).format(amount)}</p>
                     </div>
                     {
-                        budget.user.bankAccounts.map(account => {
-                            return(
-                                <div style={{fontSize: '14px', display: 'flex', justifyContent: 'space-between'}}>
-                                    <p>{account.bankName}</p>
-                                    <p>${Intl.NumberFormat('en-us', {minimumFractionDigits: 2}).format(account.balance)}</p>
-                                </div>
-                            )
+                        budget.user.bankAccounts.map((account: any, index: number) => {
+                            return <Account key={index} bankName={account.bankName} balance={account.balance} />
                         })
                     }
                     <Chip 
