@@ -20,3 +20,5 @@ code {
 .login:hover {
   cursor: pointer;
 }
+
+#add-account:hover {cursor: pointer;}
