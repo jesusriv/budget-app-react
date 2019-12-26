@@ -9,6 +9,7 @@ import Overview from '../../molecules/Overview/Overview';
 
 interface DashState {
     user: {
+        id: number,
         name: String,
         email: String,
         bankAccounts: {
@@ -16,6 +17,7 @@ interface DashState {
             balance: number,
         }[]
         budget: {
+            id: number,
             name: String,
             subCategories: {
                     activity: number,
@@ -36,10 +38,12 @@ export default class Dashboard extends React.Component<{}, DashState> {
         super(props);
         this.state = {
             user: {
+                id: 0,
                 name: "",
                 email: "",
                 bankAccounts:[],
                 budget: {
+                    id: 0,
                     name: "",
                     subCategories: [],
                     totalInBudget: 0
@@ -50,10 +54,7 @@ export default class Dashboard extends React.Component<{}, DashState> {
             totalBudgeted: "",
             leftToBudget: ''
         }
-    }
-
-    componentDidMount = async () => {
-        await this.getBudgetInfo() ;
+        this.getBudgetInfo();
     }
 
     public getUser = async () => {
@@ -81,12 +82,12 @@ export default class Dashboard extends React.Component<{}, DashState> {
 
     render() {
         if (!localStorage.getItem('userId')) return <Redirect to="/login" />;
-        if (!this.state.user) this.getUser();
-        let userId = 3;
-        let budgetId = 3;
+        let userId: number = Number(this.state.user.id);
+        let budgetId: number = Number(this.state.user.budget.id);
         
         const totalInBudget = Intl.NumberFormat('en-us', {minimumFractionDigits: 2}).format(this.state.user.budget.totalInBudget);
         return (
+            
             <div style={{display: "flex"}}>
                 <Aside 
                     totalInBudget={totalInBudget}
@@ -96,8 +97,8 @@ export default class Dashboard extends React.Component<{}, DashState> {
                     <StatusBar budget={this.state.user.budget} leftToBudget={this.state.leftToBudget}  />
                     <div style={{display: 'flex', top: '95px', position: 'relative'}}>
                         <CategoryTable 
-                            user={userId}
-                            budget={budgetId}
+                            user={3}
+                            budget={3}
                         />
                         <Overview 
                             totalAmount={this.state.totalAmount}
