@@ -90,7 +90,7 @@ export default class Aside extends React.Component<AsideProps, AsideState> {
                         id="add-account"
                         style={{backgroundColor: "rgba(222, 248, 255, .3)", color: 'white'}}
                         icon={
-                            <AddCircle style={{color: "white", marginBottom: '2px', marginRight: '-5px'}}/>
+                            <AddCircle style={{color: "#fff", marginBottom: '2px', marginRight: '-5px'}}/>
                         }
                         label="Add account"
                        />
