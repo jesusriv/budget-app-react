@@ -5,7 +5,8 @@ import { Chip } from '@material-ui/core';
 import { ExitToApp } from '@material-ui/icons';
 
 interface StatusProps {
-    budget: Object
+    budget: Object,
+    leftToBudget: string
 }
 
 const StatusBar: React.FC<StatusProps> = (props: StatusProps) => {
@@ -52,16 +53,17 @@ const StatusBar: React.FC<StatusProps> = (props: StatusProps) => {
                 justifyContent: "center",
             }}>
                     <div style={{
-                        width: "118px", 
+                        width: "auto", 
                         height: "85%", 
                         backgroundColor: "#16a336", 
                         color: "white",
                         borderRadius: "10px",
                         display: 'grid',
                         alignSelf: "center",
+                        padding: "0 5px",
                         gridTemplateRows: "auto 15px auto"
                     }}>
-                        <div style={{
+                        {/* <div style={{
                             width: 0,
                             height: 0,
                             borderTop: "15px solid transparent",
@@ -73,8 +75,8 @@ const StatusBar: React.FC<StatusProps> = (props: StatusProps) => {
                             borderLeft: "15px solid #16a336"
                         }}>
 
-                        </div>
-                        <p style={{gridRow: "3 / 4", fontSize: "28px", fontWeight: 200, margin: 0, textAlign: "center"}}>$0.00</p>
+                        </div> */}
+                        <p style={{gridRow: "3 / 4", fontSize: "28px", fontWeight: 200, margin: 0, textAlign: "center"}}>{props.leftToBudget}</p>
                         <p style={{gridRow: "4 / 5", margin: "0 0 10px 0", fontSize: "14px", fontStyle: "italic", textAlign: "center", color: `#333`}}>To Be Budgeted</p>
                     </div>
                 
