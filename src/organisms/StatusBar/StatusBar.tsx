@@ -4,7 +4,11 @@ import customTheme from '../../theme/CustomTheme/CustomTheme';
 import { Chip } from '@material-ui/core';
 import { ExitToApp } from '@material-ui/icons';
 
-const StatusBar: React.FC = () => {
+interface StatusProps {
+    budget: Object
+}
+
+const StatusBar: React.FC<StatusProps> = (props: StatusProps) => {
 
     const logout = async () => {
         await fetch('/api/logout', {
